@@ -24,37 +24,36 @@ class MainActivity : AppCompatActivity() {
 
     fun converter() {
         val temperatura = binding.editTextTemperatura.text.toString().toDouble()
-        val cF = (temperatura * 1.8) + 32
-        val cK = temperatura + 273
-        val cC = temperatura
-        val fC = (temperatura -32) / 1.8
-        val fK = (temperatura + 459.67) * 5 / 9
-        val fF = temperatura
-        val kC = temperatura -273
-        val kF = ((temperatura -273) *9/5) +32
-        val kK = temperatura
+        val celsiusToFahrenheit = (temperatura * 1.8) + 32
+        val celsiusToKelvin = temperatura + 273
+        val celsiusToCelsius = temperatura
+        val fahrenheitToCelsius = (temperatura -32) / 1.8
+        val fahrenheitToKelvin = (temperatura + 459.67) * 5 / 9
+        val fahrenheitToFahrenheit = temperatura
+        val kelvinToCelsius = temperatura -273
+        val kelvinToFahrenheit = ((temperatura -273) *9/5) +32
+        val kelvinToKelvin = temperatura
 
         when {
             binding.radioButtonCelsius1.isChecked && binding.radioButtonFahrenheit2.isChecked ->
-                binding.textViewResultado.setText("%.2f".format(cF))
+                binding.textViewResultado.setText("%.2f".format(celsiusToFahrenheit))
             binding.radioButtonCelsius1.isChecked && binding.radioButtonKelvin2.isChecked ->
-                binding.textViewResultado.setText("%.2f".format(cK))
+                binding.textViewResultado.setText("%.2f".format(celsiusToKelvin))
             binding.radioButtonCelsius1.isChecked && binding.radioButtonCelsius2.isChecked ->
-                binding.textViewResultado.setText("%.2f".format(cC))
+                binding.textViewResultado.setText("%.2f".format(celsiusToCelsius))
             binding.radioButtonFahrenheit1.isChecked && binding.radioButtonCelsius2.isChecked ->
-                binding.textViewResultado.setText("%.2f".format(fC))
+                binding.textViewResultado.setText("%.2f".format(fahrenheitToCelsius))
             binding.radioButtonFahrenheit1.isChecked && binding.radioButtonKelvin2.isChecked ->
-                binding.textViewResultado.setText("%.2f".format(fK))
+                binding.textViewResultado.setText("%.2f".format(fahrenheitToKelvin))
             binding.radioButtonFahrenheit1.isChecked && binding.radioButtonFahrenheit2.isChecked ->
-                binding.textViewResultado.setText("%.2f".format(fF))
+                binding.textViewResultado.setText("%.2f".format(fahrenheitToFahrenheit))
             binding.radioButtonKelvin1.isChecked && binding.radioButtonCelsius2.isChecked ->
-                binding.textViewResultado.setText("%.2f".format(kC))
+                binding.textViewResultado.setText("%.2f".format(kelvinToCelsius))
             binding.radioButtonKelvin1.isChecked && binding.radioButtonFahrenheit2.isChecked ->
-                binding.textViewResultado.setText("%.2f".format(kF))
+                binding.textViewResultado.setText("%.2f".format(kelvinToFahrenheit))
             binding.radioButtonKelvin1.isChecked && binding.radioButtonKelvin2.isChecked ->
-                binding.textViewResultado.setText("%.2f".format(kK))
+                binding.textViewResultado.setText("%.2f".format(kelvinToKelvin))
 
         }
-
     }
 }
